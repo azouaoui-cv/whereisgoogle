@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Where is Google</title>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+td {
+    font-size:150%;
+}
+p {
+    text-align: center;
+    font-size: 20px;
+}
+</style>    
+</head>
+<body>
+
+<h2>Where is Google?</h2>
+
+<p id="demo">Click on the real Google logo</p>
+
+
+<div class="controls">
+        <label class="control-label" for="new_table_rows">Rows</label>
+        <div>
+        <input type="number" min="2" max="10" id="new_table_rows_input" value="4">
+        <span class="help-inline">Valid range: 2-10</span>
+        </div>
+</div>
+<div class="controls">
+    <label class="control-label" for="new_table_columns">Columns</label>
+    <div>
+    <input type="number" min="2" max="10" id="new_table_columns_input" value="4">
+    <span class="help-inline">Valid range: 2-10</span>
+    </div>
+</div>
+
+<input id="table-generator" type="button" value="Generate Table" onclick="tableCreate()" />
+
+<script src="assets/js/HelloGoogle.js"></script>
+
+</body>
+</html>
