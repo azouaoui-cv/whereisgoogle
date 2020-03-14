@@ -34,23 +34,30 @@ p {
 </div>
 
 <div class="container-fluid p-3 my-3 bg-dark text-white">
-<div class="controls">
+<div class="row">
+    <div class="col">
+        <div class="controls">
         <label class="control-label" for="new_table_rows">Rows</label>
-        <div>
+           <div>
         <input type="number" min="2" max="10" id="new_table_rows_input" value="4">
         <span class="help-inline">Valid range: 2-10</span>
+           </div>
         </div>
-</div>
-<div class="controls">
-    <label class="control-label" for="new_table_columns">Columns</label>
-    <div>
-    <input type="number" min="2" max="10" id="new_table_columns_input" value="4">
-    <span class="help-inline">Valid range: 2-10</span>
+    </div>
+    <div class="col">
+        <div class="controls">
+        <label class="control-label" for="new_table_columns">Columns</label>
+            <div>
+            <input type="number" min="2" max="10" id="new_table_columns_input" value="4">
+            <span class="help-inline">Valid range: 2-10</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <input id="table-generator" type="button" value="Generate Table" onclick="tableCreate()" class="btn btn-secondary" />
     </div>
 </div>
-
-
-<input id="table-generator" type="button" value="Generate Table" onclick="tableCreate()" class="btn btn-secondary" />
 </div>
 
 <script src="assets/js/HelloGoogle.js"></script>
