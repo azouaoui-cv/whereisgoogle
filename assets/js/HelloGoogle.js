@@ -41,12 +41,10 @@ function arraysEqual(a, b) {
     if (a === b) return true;
     if (a == null || b == null) return false;
     if (a.length != b.length) return false;
-  
     // If you don't care about the order of the elements inside
     // the array, you should sort both arrays here.
     // Please note that calling sort on an array will modify that array.
     // you might want to clone your array first.
-  
     for (let i = 0; i < a.length; ++i) {
       if (a[i] !== b[i]) return false;
     }
@@ -71,7 +69,7 @@ function shuffle(a) {
 //////////
 function create_combinations(n_logos=16){
   // instanciate cartesian product
-  let combinations = cartesian(color_names, 
+  let combinations = cartesian(color_names,
     color_names,
     color_names,
     color_names,
@@ -101,25 +99,19 @@ function populate_HTML(selected_subset) {
 
   // Set the date we're counting down to
   var startDate = new Date().getTime();
-    
   // Update the count down every 1 second
   var x = setInterval(function() {
-  
     // Get today's date and time
     var now = new Date().getTime();
-  
     // Find the distance between now and the count down date
     var distance = now - startDate;
-  
     // Time calculations for days, hours, minutes and seconds
     // var days = Math.floor(distance / (1000 * 60 * 60 * 24));
     // var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
     // Display the result in the element with id="demo"
     document.getElementById("timer").innerHTML = minutes + "m " + seconds + "s ";
-  
     // If the count down is finished, write some text
     if (distance > 1000 * 60 * 60) {
       clearInterval(x);
@@ -138,10 +130,8 @@ function populate_HTML(selected_subset) {
 
         // Get today's date and time
         var now = new Date().getTime();
-      
         // Find the distance between now and the count down date
         var distance = now - startDate;
-      
         // Time calculations for days, hours, minutes and seconds
         // var days = Math.floor(distance / (1000 * 60 * 60 * 24));
         // var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -158,7 +148,6 @@ function populate_HTML(selected_subset) {
         alert("Wrong logo!");
       }
     }
-    
     for (let [key, value] of Object.entries(letters_idx)) {
         document.getElementById(`${key}-${i}`).style.color = colors[selected_subset[i][value]];
         }
@@ -168,7 +157,6 @@ function populate_HTML(selected_subset) {
 //////////
 // Main //
 //////////
-
 function tableCreate(){
 
     if (document.contains(document.getElementById("demo-table"))) {
@@ -188,7 +176,6 @@ function tableCreate(){
     table.style.width  = '100%';
     table.id = "demo-table";
     timer.id = "timer";
-    // table.style.border = '1px solid black';
     let counter = 0;
     for(let i = 0; i < n_rows; i++){
         const tr = table.insertRow();
@@ -214,5 +201,4 @@ function tableCreate(){
     body.appendChild(timer);
     combinations = create_combinations(n_logos);
     populate_HTML(combinations);
-    
 }
